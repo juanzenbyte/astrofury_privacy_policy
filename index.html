@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — AstroFury | ZenByte</title>
+<style>
+  :root{
+    --bg: #06060f;
+    --bg-panel: #0c0c1c;
+    --line: rgba(120,140,255,0.14);
+    --cyan: #2bd9ff;
+    --violet: #b449ff;
+    --text: #dde3f5;
+    --text-dim: #8d93b5;
+    --text-faint: #5b6088;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 500px at 12% -10%, rgba(43,217,255,0.10), transparent 60%),
+      radial-gradient(900px 600px at 110% 20%, rgba(180,73,255,0.10), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Inter", Arial, sans-serif;
+    line-height:1.65;
+  }
+
+  /* ---------- Circuit motif (signature element) ---------- */
+  .circuit-rule{
+    height:2px; width:100%;
+    background: linear-gradient(90deg, transparent, var(--cyan) 15%, var(--violet) 85%, transparent);
+    opacity:0.55;
+  }
+  .node{
+    width:6px;height:6px;border-radius:50%;
+    background: var(--cyan);
+    box-shadow: 0 0 8px 1px rgba(43,217,255,0.8);
+    display:inline-block;
+  }
+
+  header{
+    padding: 64px 24px 40px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .logo-mark{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    font-weight:800; font-size:15px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--text-dim); margin-bottom:18px;
+  }
+  .logo-mark .brand{
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    font-weight:800;
+  }
+  h1{
+    font-size: clamp(28px, 5vw, 44px);
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+    background: linear-gradient(100deg, #eaf6ff 0%, var(--cyan) 45%, var(--violet) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .subtitle{ color:var(--text-dim); font-size:16px; max-width:560px; margin:0 auto; }
+  .meta-row{
+    margin-top:22px; display:flex; gap:18px; justify-content:center; flex-wrap:wrap;
+    font-size:13px; color:var(--text-faint);
+  }
+  .meta-row span b{ color: var(--text-dim); font-weight:600; }
+
+  .shell{ max-width: 880px; margin: 0 auto; padding: 0 24px 100px; }
+
+  nav.toc{
+    margin: 40px 0 8px;
+    background: var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 26px;
+  }
+  nav.toc .toc-title{
+    font-size:12px; text-transform:uppercase; letter-spacing:0.14em;
+    color:var(--text-faint); margin-bottom:14px; display:flex; align-items:center; gap:8px;
+  }
+  nav.toc ol{ columns: 2; column-gap: 28px; margin:0; padding:0 0 0 18px; }
+  nav.toc li{ break-inside: avoid; margin-bottom:9px; font-size:14.5px; }
+  nav.toc a{ color: var(--text); text-decoration:none; border-bottom:1px solid transparent; }
+  nav.toc a:hover{ color: var(--cyan); border-bottom-color: rgba(43,217,255,0.4); }
+
+  section.block{
+    padding: 38px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 24px;
+  }
+  section.block:last-of-type{ border-bottom:none; }
+
+  .eyebrow{
+    display:flex; align-items:center; gap:10px;
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color: var(--cyan); margin-bottom:10px; font-weight:700;
+  }
+  h2{ font-size:22px; margin:0 0 14px; color:#f3f6ff; }
+  h3{ font-size:16.5px; margin: 22px 0 8px; color:#cdd6f5; }
+  p{ color: var(--text); margin: 0 0 14px; font-size:15.5px; }
+  p.dim{ color: var(--text-dim); }
+
+  ul.data-list{ margin:0 0 16px; padding-left:0; list-style:none; }
+  ul.data-list li{
+    padding: 12px 16px;
+    margin-bottom:10px;
+    background: var(--bg-panel);
+    border:1px solid var(--line);
+    border-left: 3px solid var(--cyan);
+    border-radius: 8px;
+    font-size:14.5px;
+    color: var(--text);
+  }
+  ul.data-list li b{ color:#fff; }
+  ul.data-list li.violet{ border-left-color: var(--violet); }
+
+  table.partners{
+    width:100%; border-collapse: collapse; margin: 10px 0 20px;
+    font-size: 14px;
+  }
+  table.partners th{
+    text-align:left; color:var(--text-faint); font-weight:600;
+    font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em;
+    padding: 0 12px 10px; border-bottom:1px solid var(--line);
+  }
+  table.partners td{
+    padding: 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--text);
+  }
+  table.partners tr:last-child td{ border-bottom:none; }
+  table.partners a{ color: var(--cyan); }
+
+  .badge{
+    display:inline-block; padding:3px 9px; border-radius:99px;
+    font-size:11px; font-weight:700; letter-spacing:0.04em;
+    background: rgba(43,217,255,0.12); color: var(--cyan); border:1px solid rgba(43,217,255,0.3);
+  }
+
+  .contact-card{
+    background: linear-gradient(135deg, rgba(43,217,255,0.07), rgba(180,73,255,0.07));
+    border:1px solid var(--line); border-radius:14px; padding:26px;
+    margin-top:8px;
+  }
+  .contact-card a{ color: var(--cyan); font-weight:600; text-decoration:none; }
+  .contact-card a:hover{ text-decoration:underline; }
+  .placeholder{ color:#ffce5c; font-style:italic; }
+
+  footer{
+    text-align:center; padding: 50px 24px 70px; color: var(--text-faint); font-size:13px;
+  }
+  footer .tagline{ margin-top:8px; color: var(--text-dim); font-size:13px; }
+  footer .brand-foot{
+    font-weight:800; letter-spacing:0.06em;
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  @media (max-width:560px){
+    nav.toc ol{ columns:1; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <span class="node"></span>
+    <span class="brand">ZenByte</span>
+    <span style="opacity:0.5;">·</span>
+    <span>AstroFury</span>
+  </div>
+  <h1>Política de Privacidad</h1>
+  <p class="subtitle">Cómo AstroFury recopila, usa y protege la información de quienes lo juegan.</p>
+  <div class="meta-row">
+    <span><b>Última actualización:</b> 30 de junio de 2026</span>
+    <span><b>Aplicación:</b> com.zenbyte.astrofury</span>
+    <span><b>Desarrollador:</b> ZenByte</span>
+  </div>
+</header>
+
+<div class="shell">
+
+  <nav class="toc">
+    <div class="toc-title"><span class="node"></span> Contenido</div>
+    <ol>
+      <li><a href="#intro">1. Introducción</a></li>
+      <li><a href="#datos">2. Información que recopilamos</a></li>
+      <li><a href="#uso">3. Cómo usamos tu información</a></li>
+      <li><a href="#terceros">4. Servicios de terceros</a></li>
+      <li><a href="#local">5. Datos guardados en tu dispositivo</a></li>
+      <li><a href="#anuncios">6. Publicidad</a></li>
+      <li><a href="#menores">7. Privacidad de menores</a></li>
+      <li><a href="#derechos">8. Tus derechos y eliminación de datos</a></li>
+      <li><a href="#seguridad">9. Seguridad</a></li>
+      <li><a href="#cambios">10. Cambios a esta política</a></li>
+      <li><a href="#contacto">11. Contacto</a></li>
+    </ol>
+  </nav>
+
+  <section class="block" id="intro">
+    <div class="eyebrow"><span class="node"></span> 01</div>
+    <h2>Introducción</h2>
+    <p>Esta Política de Privacidad describe cómo <b>ZenByte</b> ("nosotros") trata la información dentro de
+    <b>AstroFury</b> ("la Aplicación"), un videojuego arcade para dispositivos Android. Al instalar o usar
+    AstroFury, aceptas las prácticas descritas en este documento.</p>
+    <p class="dim">AstroFury está diseñado para ser ligero en datos: no requiere registro con correo ni
+    contraseña, y la mayor parte de tu progreso vive únicamente en tu propio dispositivo.</p>
+  </section>
+
+  <section class="block" id="datos">
+    <div class="eyebrow"><span class="node"></span> 02</div>
+    <h2>Información que recopilamos</h2>
+    <p>Recopilamos la información mínima necesaria para que el juego funcione, incluyendo el ranking global
+    y la personalización de tu nave:</p>
+    <ul class="data-list">
+      <li><b>Nombre de jugador:</b> el alias que escribes (hasta 12 caracteres) para identificarte en el
+        Ranking Global. Se almacena en tu dispositivo y, si tu puntuación califica, se envía junto con tu
+        puntaje a nuestra base de datos en la nube.</li>
+      <li><b>Puntuaciones y nivel alcanzado:</b> tu mejor puntaje, nivel y la fecha de la partida, usados para
+        construir el Ranking Global y tu récord personal.</li>
+      <li class="violet"><b>Preferencias de nave y disparo:</b> el diseño de nave y el estilo de láser que
+        eliges al personalizar tu experiencia. Se guardan únicamente en tu dispositivo.</li>
+      <li><b>Identificador de publicidad (Advertising ID):</b> un identificador anónimo de Android usado por
+        nuestro proveedor de anuncios para mostrar publicidad relevante. No incluye tu nombre real, correo
+        ni datos de contacto.</li>
+    </ul>
+    <p class="dim">No recopilamos ubicación, contactos, fotos, micrófono ni ningún otro permiso sensible del
+    dispositivo.</p>
+  </section>
+
+  <section class="block" id="uso">
+    <div class="eyebrow"><span class="node"></span> 03</div>
+    <h2>Cómo usamos tu información</h2>
+    <ul class="data-list">
+      <li>Mostrar el <b>Ranking Global</b> con los mejores puntajes de todos los jugadores.</li>
+      <li>Guardar tu <b>récord personal</b> y tus preferencias de nave para que persistan entre sesiones.</li>
+      <li>Mostrar <b>anuncios</b> que ayudan a mantener el juego gratuito.</li>
+      <li>Detectar y corregir errores técnicos que afecten la estabilidad del juego.</li>
+    </ul>
+    <p>No vendemos tu información, ni la usamos con fines distintos a los descritos en este documento.</p>
+  </section>
+
+  <section class="block" id="terceros">
+    <div class="eyebrow"><span class="node"></span> 04</div>
+    <h2>Servicios de terceros</h2>
+    <p>AstroFury utiliza los siguientes servicios para operar el ranking global y la publicidad. Cada uno
+    procesa datos conforme a sus propias políticas:</p>
+    <table class="partners">
+      <tr><th>Servicio</th><th>Función en AstroFury</th><th>Política</th></tr>
+      <tr>
+        <td><b>Google Firebase</b><br><span class="badge">Realtime Database</span></td>
+        <td>Almacena y sincroniza el nombre, puntuación y nivel de los jugadores para el Ranking Global.</td>
+        <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+      </tr>
+      <tr>
+        <td><b>Google AdMob</b><br><span class="badge">Publicidad</span></td>
+        <td>Muestra anuncios al finalizar una partida, usando el Advertising ID del dispositivo.</td>
+        <td><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></td>
+      </tr>
+      <tr>
+        <td><b>Google Play Services</b></td>
+        <td>Provee infraestructura base de Android utilizada por los servicios anteriores.</td>
+        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="block" id="local">
+    <div class="eyebrow"><span class="node"></span> 05</div>
+    <h2>Datos guardados en tu dispositivo</h2>
+    <p>AstroFury guarda localmente, mediante el almacenamiento estándar de Android, lo siguiente:</p>
+    <ul class="data-list">
+      <li>Tu nombre de jugador, para no tener que escribirlo cada vez que abres el juego.</li>
+      <li class="violet">La nave y el estilo de disparo que elegiste, para conservar tu personalización.</li>
+      <li>Tu récord personal más alto alcanzado en este dispositivo.</li>
+    </ul>
+    <p class="dim">Esta información permanece en tu teléfono y se elimina automáticamente si desinstalas la
+    aplicación. Puedes cambiar tu nave en cualquier momento desde el menú "Cambiar nave".</p>
+  </section>
+
+  <section class="block" id="anuncios">
+    <div class="eyebrow"><span class="node"></span> 06</div>
+    <h2>Publicidad</h2>
+    <p>AstroFury muestra anuncios intersticiales (pantalla completa) proporcionados por Google AdMob,
+    principalmente al finalizar una partida. Estos anuncios pueden estar personalizados según tu Advertising
+    ID, salvo que hayas limitado el seguimiento publicitario en la configuración de tu dispositivo
+    (<i>Ajustes → Privacidad → Anuncios</i> en Android).</p>
+  </section>
+
+  <section class="block" id="menores">
+    <div class="eyebrow"><span class="node"></span> 07</div>
+    <h2>Privacidad de menores</h2>
+    <p>AstroFury está clasificado para jugadores de 13 años en adelante. No solicitamos ni recopilamos
+    intencionalmente información personal identificable de niños menores de 13 años. Si tienes motivos para
+    creer que un menor nos ha proporcionado datos, contáctanos para eliminarlos.</p>
+  </section>
+
+  <section class="block" id="derechos">
+    <div class="eyebrow"><span class="node"></span> 08</div>
+    <h2>Tus derechos y eliminación de datos</h2>
+    <p>Puedes solicitar la eliminación del nombre y la puntuación asociados a tu partida en el Ranking
+    Global en cualquier momento. Para hacerlo, escríbenos indicando el nombre de jugador que usaste y,
+    si lo recuerdas, la fecha aproximada de tu partida.</p>
+    <p>Atenderemos solicitudes de eliminación en un plazo razonable. Ten en cuenta que el nombre de jugador
+    por sí solo no suele identificarte personalmente, por lo que podríamos pedirte detalles adicionales
+    para localizar el registro correcto.</p>
+  </section>
+
+  <section class="block" id="seguridad">
+    <div class="eyebrow"><span class="node"></span> 09</div>
+    <h2>Seguridad</h2>
+    <p>Toda la comunicación entre AstroFury y nuestros servicios en la nube (Firebase, AdMob) viaja cifrada
+    mediante HTTPS/TLS. Si bien ningún sistema es perfectamente seguro, tomamos medidas razonables para
+    proteger la información que procesamos.</p>
+  </section>
+
+  <section class="block" id="cambios">
+    <div class="eyebrow"><span class="node"></span> 10</div>
+    <h2>Cambios a esta política</h2>
+    <p>Podemos actualizar esta Política de Privacidad conforme el juego evolucione. Los cambios entrarán en
+    vigor al publicarse en esta misma página, y actualizaremos la fecha indicada al inicio del documento.
+    Te recomendamos revisarla periódicamente.</p>
+  </section>
+
+  <section class="block" id="contacto" style="border-bottom:none;">
+    <div class="eyebrow"><span class="node"></span> 11</div>
+    <h2>Contacto</h2>
+    <p>Si tienes preguntas sobre esta Política de Privacidad, sobre tus datos, o quieres solicitar su
+    eliminación, escríbenos:</p>
+    <div class="contact-card">
+      <p style="margin-bottom:6px;">📧 <a href="mailto:zenbyte.proyectos@gmail.com">zenbyte.proyectos@gmail.com</a></p>
+      <p class="dim" style="margin-bottom:0; font-size:13.5px;">
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<div class="circuit-rule"></div>
+<footer>
+  <div class="brand-foot">ZENBYTE</div>
+  <div class="tagline">Bytes into insights, insights into decisions.</div>
+</footer>
+
+</body>
+</html>
